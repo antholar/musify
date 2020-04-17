@@ -24,11 +24,9 @@ exports.ensureAuth = function(req,res,next){  //el next sirve para salir del mid
 	catch(ex){
 		console.log(ex);
 		return res.status(404).send({
-			message: 'Token no valido.'
+			message: 'Token no valido o expirado.'
 		});	
 	}
-
-
 
 	req.user = payload;
 	next();   //salir de la funcion midleware

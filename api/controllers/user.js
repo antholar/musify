@@ -5,7 +5,7 @@ var User = require('../models/user');
 var jwt = require('../services/jwt');
 
 var fs = require('fs');       //liberrias usadas para trabajar con los archivos
-var path = require('path');
+var path = require('path');	  //sirve para enviar la imagen como respuesta del json
 
 function pruebas(req,res){
 	res.status(200).send({
@@ -17,8 +17,6 @@ function pruebas(req,res){
 function saveUser(req,res){
 	var user = new User();
 	var params = req.body;  //se recogen los datos de la peticion
-	
-	//console.log(params);
 
 	user.name = params.name;
 	user.surname = params.surname;
@@ -114,7 +112,7 @@ function updateUser(req,res){
 	//es necesario que funcione con token, ya que la variable user.sub, se agregar al Request 
 	//despues de haber pasado por el midleware
 	if(userId != req.user.sub){
-		return res.status(500).send({message: 'No se envio el id del usuario que quiere actualizar'});
+		return res.status(500).send({message: 'El token de autorizacion debe pertenecer al usuario que quiere actualizar'});
 	}
 
 	//metodo de mongoose para actualizar los datos, apartir del id, recordar que el id es generado por mongo
