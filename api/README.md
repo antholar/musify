@@ -63,3 +63,29 @@ Se subieron las funciones de Album
     - http://localhost:3977/api/upload-image-album/<ID ALBUM>
 - Get imagen album apartir del nombre de la imagen
     - http://localhost:3977/api/get-image-album/<ID IMAGEN>
+
+
+## v4
+Se subieron las funciones de la cancion
+
+## URLs generadas
+- Obtener datos de la cancion
+    - http://localhost:3977/api/song/<ID SONG>
+- Guardar cancion
+    - http://localhost:3977/api/song
+- Listado de canciones con o sin id de la cancion. Al no poner el id del album, muestra todas las canciones
+    - http://localhost:3977/api/songs/
+- Actualizar cancion con el id de la cancion
+    - http://localhost:3977/api/song/<ID SONG>
+- Borrar Cancion
+    - http://localhost:3977/api/song/<ID SONG>
+- Upload file song
+    - http://localhost:3977/api/upload-file-song/<ID SONG>
+- Get file song, necesita el ID de la cancion
+    - http://localhost:3977/api/get-song-file/<NOMBRE FILE >
+- 
+    - 
+- 
+    - 
+- 
+    - 
